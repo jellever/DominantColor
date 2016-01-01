@@ -32,7 +32,7 @@ namespace Demo
                 this.ItemsControl.ItemsSource = value;
             }
         }
-        
+
         public Dictionary<int, uint> ColorHistogram
         {
             get { return colorHistogram; }
@@ -50,7 +50,7 @@ namespace Demo
             double controlHeight = this.ItemsControl.ActualHeight;
             foreach (var hueOccurence in colorHistogram)
             {
-                double height = (hueOccurence.Value/max) * controlHeight;
+                double height = ((double)hueOccurence.Value / max) * controlHeight;
                 hueControlData.Add(new HueData()
                 {
                     Hue = hueOccurence.Key,

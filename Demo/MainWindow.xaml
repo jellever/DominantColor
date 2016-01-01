@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Demo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="600.568" Width="589.631">
     <StackPanel Orientation="Vertical">
         <StackPanel Orientation="Horizontal">
             <StackPanel Orientation="Vertical" Margin="10">
-                <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                <Border  BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Top" >
                     <Image x:Name="image" Height="96"  Width="96"/>
                 </Border>
                 <Button x:Name="btnBrowse" Content="Browse..." Margin="0,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="96" Click="btnBrowse_Click"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="10">
-               <Rectangle Name="HueAvgColorRectangle" Width="96" Height="96"></Rectangle>
+                <Rectangle Name="HueAvgColorRectangle" Width="96" Height="96"></Rectangle>
                 <Label Content="Hue" HorizontalAlignment="Center"></Label>
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="10">
@@ -23,9 +23,19 @@
                 <Label Content="RGB" HorizontalAlignment="Center"></Label>
             </StackPanel>
         </StackPanel>
+        <Line X2="1" Stretch="Fill" StrokeThickness="1" Stroke="Black" Margin="0,10,0,10"></Line>
         <StackPanel Orientation="Horizontal">
-            <local:ColorHistogramControl x:Name="HueHistogramControl" Width="369" Height="100"></local:ColorHistogramControl>
+            <Border BorderThickness="1" BorderBrush="Gray">
+                <local:ColorHistogramControl x:Name="HueHistogramControl" HorizontalAlignment="Stretch" Height="150"></local:ColorHistogramControl>
+            </Border>
         </StackPanel>
+        <Label HorizontalAlignment="Center" Content="Color Histogram"></Label>
+        <StackPanel Orientation="Horizontal">
+            <Border BorderThickness="1" BorderBrush="Gray">
+                <local:ColorHistogramControl x:Name="SmoothedHueHistogramControl" HorizontalAlignment="Stretch" Height="150"></local:ColorHistogramControl>
+            </Border>
+        </StackPanel>
+        <Label HorizontalAlignment="Center" Content="Smoothed Color Histogram"></Label>
     </StackPanel>
 </Window>
 

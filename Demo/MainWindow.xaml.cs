@@ -58,6 +58,7 @@ namespace Demo
             this.HueAvgColorRectangle.Fill = new SolidColorBrush(convertedHueColor);
 
             this.HueHistogramControl.ColorHistogram = hueColorCalculator.HueHistogram;
+            this.SmoothedHueHistogramControl.ColorHistogram = hueColorCalculator.SmoothedHueHistorgram;
         }
     }
 }
