@@ -10,6 +10,13 @@ namespace DominantColor
 {
     public class ColorUtils
     {
+        /// <summary>
+        /// Get hue histogram for given bitmap.
+        /// </summary>
+        /// <param name="bmp">The bitmap to get the histogram for</param>
+        /// <param name="saturationThreshold">The saturation threshold to take into account getting the histogram</param>
+        /// <param name="brightnessThreshold">The brightness threshold to take into account getting the histogram</param>
+        /// <returns>A dictionary representing the hue histogram. Key: Hue index (0-360). Value: Occurence of the hue.</returns>
         internal static unsafe Dictionary<int, uint> GetColorHueHistogram(Bitmap bmp, float saturationThreshold, float brightnessThreshold)
         {
             Dictionary<int, uint> colorHueHistorgram = new Dictionary<int, uint>();
@@ -38,6 +45,11 @@ namespace DominantColor
             return colorHueHistorgram;
         }
 
+        /// <summary>
+        /// Calculate average RGB color for given bitmap
+        /// </summary>
+        /// <param name="bmp">The bitmap to calculate the average color for.</param>
+        /// <returns>Average color</returns>
         internal static unsafe Color GetAverageRGBColor(Bitmap bmp)
         {
             int totalRed = 0;
@@ -67,6 +79,11 @@ namespace DominantColor
             return Color.FromArgb(avgRed, avgGreen, avgBlue);
         }
 
+        /// <summary>
+        /// Correct out of bound hue index
+        /// </summary>
+        /// <param name="hue">hue index</param>
+        /// <returns>Corrected hue index (within 0-360 boundaries)</returns>
         private static int CorrectHueIndex(int hue)
         {
             int result = hue;
@@ -77,6 +94,13 @@ namespace DominantColor
             return result;
         }
 
+        /// <summary>
+        /// Get color from HSV (Hue, Saturation, Brightness) combination.
+        /// </summary>
+        /// <param name="hue"></param>
+        /// <param name="saturation"></param>
+        /// <param name="value"></param>
+        /// <returns>The color</returns>
         public static Color ColorFromHSV(double hue, double saturation, double value)
         {
             int hi = Convert.ToInt32(Math.Floor(hue / 60)) % 6;
@@ -105,6 +129,12 @@ namespace DominantColor
             }
         }
 
+        /// <summary>
+        /// Smooth histogram with given smoothfactor. 
+        /// </summary>
+        /// <param name="colorHueHistogram">The histogram to smooth</param>
+        /// <param name="smoothFactor">How many hue neighbouring hue indexes will be averaged by the smoothing algoritme.</param>
+        /// <returns>Smoothed hue color histogram</returns>
         internal static Dictionary<int, uint> SmoothHistogram(Dictionary<int, uint> colorHueHistogram, int smoothFactor)
         {
             if(smoothFactor < 0 || smoothFactor > 360)
@@ -129,6 +159,11 @@ namespace DominantColor
             return newHistogram;
         }
 
+        /// <summary>
+        /// Get bits for given pixelformat
+        /// </summary>
+        /// <param name="pixelFormat"></param>
+        /// <returns></returns>
         internal static byte GetBitsPerPixel(PixelFormat pixelFormat)
         {
             switch (pixelFormat)

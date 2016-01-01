@@ -17,6 +17,9 @@ namespace DominantColor
         private Dictionary<int, uint> hueHistogram;
         private Dictionary<int, uint> smoothedHueHistogram;
 
+        /// <summary>
+        /// The Hue histogram used in the calculation for dominant color
+        /// </summary>
         public Dictionary<int, uint> HueHistogram
         {
             get
@@ -25,6 +28,9 @@ namespace DominantColor
             }
         }
 
+        /// <summary>
+        /// The smoothed histogram used in the calculation for dominant color
+        /// </summary>
         public Dictionary<int, uint> SmoothedHueHistorgram
         {
             get
@@ -33,6 +39,12 @@ namespace DominantColor
             }
         }
 
+        /// <summary>
+        /// ctor
+        /// </summary>
+        /// <param name="saturationThreshold">The saturation thresshold</param>
+        /// <param name="brightnessThreshold">The brightness thresshold</param>
+        /// <param name="hueSmoothFactor">hue smoothing factor</param>
         public DominantHueColorCalculator(float saturationThreshold, float brightnessThreshold, int hueSmoothFactor)
         {
             this.saturationThreshold = saturationThreshold;
@@ -47,12 +59,22 @@ namespace DominantColor
         {
         }
 
+        /// <summary>
+        /// Get dominant hue in given hue histogram
+        /// </summary>
+        /// <param name="hueHistogram"></param>
+        /// <returns></returns>
         private int GetDominantHue(Dictionary<int, uint> hueHistogram)
         {
             int dominantHue = hueHistogram.Aggregate((l, r) => l.Value > r.Value ? l : r).Key;
             return dominantHue;
         }
 
+        /// <summary>
+        /// Calculate dominant color for given bitmap
+        /// </summary>
+        /// <param name="bitmap"></param>
+        /// <returns></returns>
         public Color CalculateDominantColor(Bitmap bitmap)
         {
             this.hueHistogram = ColorUtils.GetColorHueHistogram(bitmap, this.saturationThreshold,
