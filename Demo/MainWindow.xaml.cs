@@ -52,10 +52,12 @@ namespace Demo
             Color rgbColor = rgbColorCalculator.CalculateDominantColor(bmp);
             Color hueColor = hueColorCalculator.CalculateDominantColor(bmp);
 
-            System.Windows.Media.Color convertedRgbColor = System.Windows.Media.Color.FromArgb(rgbColor.A, rgbColor.R, rgbColor.G, rgbColor.B);
-            System.Windows.Media.Color convertedHueColor = System.Windows.Media.Color.FromArgb(hueColor.A, hueColor.R, hueColor.G, hueColor.B);
+            System.Windows.Media.Color convertedRgbColor = Utils.ConvertDrawingColor(rgbColor);
+            System.Windows.Media.Color convertedHueColor = Utils.ConvertDrawingColor(hueColor);
             this.RGBAvgColorRectangle.Fill = new SolidColorBrush(convertedRgbColor);
             this.HueAvgColorRectangle.Fill = new SolidColorBrush(convertedHueColor);
+
+            this.HueHistogramControl.ColorHistogram = hueColorCalculator.HueHistogram;
         }
     }
 }

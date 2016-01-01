@@ -23,7 +23,9 @@
                 <Label Content="RGB" HorizontalAlignment="Center"></Label>
             </StackPanel>
         </StackPanel>
-        
+        <StackPanel Orientation="Horizontal">
+            <local:ColorHistogramControl x:Name="HueHistogramControl" Width="369" Height="100"></local:ColorHistogramControl>
+        </StackPanel>
     </StackPanel>
 </Window>
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DominantColor
 {
-    class ColorUtils
+    public class ColorUtils
     {
         internal static unsafe Dictionary<int, uint> GetColorHueHistogram(Bitmap bmp, float saturationThreshold, float brightnessThreshold)
         {
@@ -77,7 +77,7 @@ namespace DominantColor
             return result;
         }
 
-        internal static Color ColorFromHSV(double hue, double saturation, double value)
+        public static Color ColorFromHSV(double hue, double saturation, double value)
         {
             int hi = Convert.ToInt32(Math.Floor(hue / 60)) % 6;
             double f = hue / 60 - Math.Floor(hue / 60);
