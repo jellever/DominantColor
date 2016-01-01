@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DominantColor", "DominantColor\DominantColor.csproj", "{8E21F45D-D79D-4A19-8447-42E965DD4961}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo.csproj", "{68CF0B59-AE75-4CCF-9608-CB4A9320BE21}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo.csproj", "{7A25189E-0C5D-41A4-A6FD-E5283C9BAE95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{8E21F45D-D79D-4A19-8447-42E965DD4961}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E21F45D-D79D-4A19-8447-42E965DD4961}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E21F45D-D79D-4A19-8447-42E965DD4961}.Release|Any CPU.Build.0 = Release|Any CPU
-		{68CF0B59-AE75-4CCF-9608-CB4A9320BE21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{68CF0B59-AE75-4CCF-9608-CB4A9320BE21}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{68CF0B59-AE75-4CCF-9608-CB4A9320BE21}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{68CF0B59-AE75-4CCF-9608-CB4A9320BE21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A25189E-0C5D-41A4-A6FD-E5283C9BAE95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A25189E-0C5D-41A4-A6FD-E5283C9BAE95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A25189E-0C5D-41A4-A6FD-E5283C9BAE95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A25189E-0C5D-41A4-A6FD-E5283C9BAE95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
